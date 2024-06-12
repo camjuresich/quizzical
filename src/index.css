@@ -1,0 +1,40 @@
+body, html {
+  display: relative;
+  overflow: hidden;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f5f7fb;
+    color: #293264;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.root {
+  /* overflow: hidden; */
+  /* width: 100%; */
+}
+
+.splash--component {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0px auto;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.squiggle-yellow {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 70%;
+}
