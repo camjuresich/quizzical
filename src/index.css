@@ -4,37 +4,72 @@ body, html {
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background-color: #f5f7fb;
-    color: #293264;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: "Inter", sans-serif;
+  background-color: #f5f7fb;
+  color:   #293264;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/yellow-squiggle.svg), url(./assets/purple-squiggle.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top -75px right -75px, bottom -75px left -75px;
 }
 
-.root {
-  /* overflow: hidden; */
-  /* width: 100%; */
-}
 
 .splash--component {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0px auto;
-    align-items: center;
-    /* justify-content: center; */
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0px auto;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.squiggle-yellow {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 70%;
+.splash--title {
+  font-family: "Karla", sans-serif ;
+  margin: 0;
+}
+
+.splash--subheading {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 2em;
+}
+
+.btn {
+  font-family: "Inter", sans-serif;
+  background: #4D5B9E;
+  color:#F5F7FB;
+  border: none;
+  padding: 1em 3em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.quiz--component {
+  max-width: 700px;
+  padding-bottom: 2em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #DBDEF0;
+}
+.quiz--question {
+  margin: 0;
+}
+
+.quiz--btn {
+  background-color: #f5f7fb;
+  font-weight: 500;
+  color: #293264;
+  padding: .5em 1em;
+  border: 2px solid #293264;
+  margin: 1em 1em 0 0;
+}
+
+.quiz--btn-selected {
+  border:2px solid #D6DBF5;
+  background-color: #D6DBF5;
+  color:#293264
 }
