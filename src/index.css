@@ -1,13 +1,12 @@
 body, html {
   display: relative;
-  overflow: hidden;
 }
 
 body {
   font-family: "Inter", sans-serif;
   background-color: #f5f7fb;
   color:   #293264;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +25,6 @@ body {
   /* justify-content: center; */
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .splash--title {
@@ -72,4 +70,8 @@ body {
   border:2px solid #D6DBF5;
   background-color: #D6DBF5;
   color:#293264
+}
+
+.btn-container {
+  margin-bottom: .5em;
 }

@@ -17,19 +17,19 @@ function App() {
     const [answers, setAnswers] = useState({});
     const [checkAnswers, setCheckAnswers] = useState(false)
 
-    function decodeData (str) {
-        str.split(/&[^;]*;/)
-        return str.split(/&[^;]*;/)
-    }
+    // function decodeData (str) {
+    //     str.split(/&[^;]*;/)
+    //     return str.replaceAll(/&[^;]*;/g, (entity) => decode(entity))
+    // }
 
     const quiz = questionsArr.map((el) => {
-        console.log(decodeData(el.question))
+        // console.log(decodeData(el.question))
         return  {
         ...el,
         selectedAnswer: "",
         id: nanoid(),
-        question: el.question,
-        answers: [...el.incorrect_answers, el.correct_answer].sort(
+        question: decode(el.question),
+        answers: [...el.incorrect_answers, el.correct_answer].map(e => decode(e)).sort(
             () => Math.random() - 0.5
         ),
     }});
