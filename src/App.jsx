@@ -2,6 +2,8 @@ import SplashScreen from "./components/Splash-Screen";
 import Quiz from "./components/Quiz";
 import data from "./assets/data";
 import { useState, useEffect } from "react";
+import { nanoid } from "nanoid";
+import { encode, decode } from "html-entities"; 
 
 const questionsArr = data.results;
 /* One way to ensure that a user cannot see the data by going into their developer console is to 
@@ -14,18 +16,30 @@ function App() {
     const [quizIsStarted, setQuizIsStarted] = useState(false);
     const [answers, setAnswers] = useState({});
     const [checkAnswers, setCheckAnswers] = useState(false)
-    const quiz = questionsArr.map((el) => ({
+
+    function decodeData (str) {
+        str.split(/&[^;]*;/)
+        return str.split(/&[^;]*;/)
+    }
+
+    const quiz = questionsArr.map((el) => {
+        console.log(decodeData(el.question))
+        return  {
         ...el,
         selectedAnswer: "",
+        id: nanoid(),
+        question: el.question,
         answers: [...el.incorrect_answers, el.correct_answer].sort(
             () => Math.random() - 0.5
         ),
-    }));
+    }});
     const [prompts, setPrompts] = useState(quiz);
     // why is the check answers button showing up early? 
     function selectAnswer(answer, currentAnswerObj) {
         setAnswers((prevAnswers) => { // answers is an object
-            
+            return {...prevAnswers,
+                [currentAnswerObj.id]: [answer]
+            }
         })
         setPrompts((prevState) => {
             const newState = prevState.map((obj) => {
@@ -41,6 +55,7 @@ function App() {
     const quizElements = prompts.map((el) => {
         return (
             <Quiz
+                key={el.id}
                 handleClick={(e) => selectAnswer(e.target.textContent, el)}
                 question={el.question}
                 answers={el.answers}
@@ -70,7 +85,7 @@ function App() {
                 <div>
                     {quizElements}
                     <div className="btn-container">
-                        {answers.length === 5 ? (
+                        {Object.values(answers).length === 5 ? (
                             <button 
                             className="btn"
                             onClick={() => setCheckAnswers(true)}
