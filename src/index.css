@@ -44,7 +44,7 @@ body {
   color:#F5F7FB;
   border: none;
   padding: 1em 3em;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
 }
 .quiz--component {
@@ -75,3 +75,23 @@ body {
 .btn-container {
   margin-bottom: .5em;
 }
+
+.results--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  
+  }
+  
+  .results--container p
+{
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.results--container button {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
