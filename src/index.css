@@ -47,7 +47,7 @@ body {
   border-radius: 15px;
   cursor: pointer;
 }
-.quiz--component {
+.question--component {
   max-width: 700px;
   padding-bottom: 2em;
   margin-bottom: 1em;
@@ -57,7 +57,7 @@ body {
   margin: 0;
 }
 
-.quiz--btn {
+.answer--btn {
   background-color: #f5f7fb;
   font-weight: 500;
   color: #293264;
@@ -66,7 +66,7 @@ body {
   margin: 1em 1em 0 0;
 }
 
-.quiz--btn-selected {
+.answer--btn-selected {
   border:2px solid #D6DBF5;
   background-color: #D6DBF5;
   color:#293264
@@ -95,3 +95,10 @@ body {
     font-size: 1rem;
 }
 
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  /* transform: translateX(1rem) */
+  /* color: #4e5eb9; */
+}
